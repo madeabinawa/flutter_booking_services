@@ -1,6 +1,6 @@
 # booking_services
 
-A new Flutter project.
+An mobile app for Customer role to create appointment with an Assistant. This app consume backend from Laravel Booking Services
 
 ## Getting Started
 
