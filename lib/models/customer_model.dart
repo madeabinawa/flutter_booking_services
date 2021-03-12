@@ -162,7 +162,7 @@ class Profile {
         phone: json["phone"],
         address: json["address"],
         city: json["city"],
-        priority: json["priority"],
+        priority: json["priority"] ?? 'Unknown',
         assistantId: json["assistant_id"],
         name: json["name"],
         assistant: Assistant.fromJson(json["assistant"]),
