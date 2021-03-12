@@ -2,23 +2,26 @@ part of 'apis.dart';
 
 class CustomerApi {
   // * USER LOGIN API
-  static Future<CustomerApiResponse?> login(
+  static Future<CustomerApiResponse> login(
       String email, String password) async {
     Customer? customer;
+
+    // SET API URL
     Uri uri = Uri.http(apiURL, apiPath + 'login');
 
     final response =
         await http.post(uri, body: {'email': email, 'password': password});
 
     if (response.statusCode != 200) {
-      return CustomerApiResponse(message: 'Oops, something went wrong');
+      return CustomerApiResponse(
+          message: 'Oops, something went wrong', status: 'error');
     }
+
     final data = jsonDecode(response.body);
     customer = Customer.fromJson(data);
 
     // * STORE USER TOKEN TO SHARED PREFERENCES
     await storeUserToken(customer.data?.token);
-    print('User Token Saved');
 
     return CustomerApiResponse(
         customer: customer, message: customer.meta?.message);
@@ -37,7 +40,8 @@ class CustomerApi {
     });
 
     if (response.statusCode != 200) {
-      return CustomerApiResponse(message: 'Oops, something went wrong');
+      return CustomerApiResponse(
+          message: 'Oops, something went wrong', status: 'error');
     }
     final data = jsonDecode(response.body)['meta'];
     meta = Meta.fromJson(data);
@@ -46,25 +50,26 @@ class CustomerApi {
   }
 
   //* USER LOGOUT
-  static Future<CustomerApiResponse?> logout() async {
+  static Future<CustomerApiResponse> logout() async {
     Meta? meta;
     String? token = await getUserToken();
-    Uri uri = Uri.http(apiURL, apiPath + 'logout');
+    Uri uri = Uri.http(apiURL, apiPath + 'customer/logout');
 
-    final response = await http.get(uri, headers: {
+    final response = await http.post(uri, headers: {
       'Content-type': 'application/json',
       'Accept': 'application/json',
       'Authorization': 'Bearer $token',
     });
 
     if (response.statusCode != 200) {
-      return CustomerApiResponse(message: 'Oops, something went wrong');
+      return CustomerApiResponse(
+          message: 'Oops, something went wrong', status: 'error');
     }
 
     final data = jsonDecode(response.body)['meta'];
     meta = Meta.fromJson(data);
 
-    return CustomerApiResponse(message: meta.message);
+    return CustomerApiResponse(message: meta.message, status: 'success');
   }
 
   //* STORE USER TOKEN TO SHARED PREFERENCES
@@ -94,6 +99,7 @@ class CustomerApi {
 class CustomerApiResponse {
   final Customer? customer;
   final String? message;
+  final String status;
 
-  CustomerApiResponse({this.customer, this.message});
+  CustomerApiResponse({this.customer, this.message, this.status = 'success'});
 }
