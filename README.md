@@ -1,11 +1,6 @@
 # booking_services
 
-An mobile app for Customer role to create appointment with an Assistant. This app consume backend from Laravel Booking Services
-
-<img src="https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/login.png" width="30%" height="auto">
-<img src="https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/home.png" width="30%" height="auto">
-<img src="https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/history.png" width="30%" height="auto">
-<img src="https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/done.png" width="30%" height="auto">
+An mobile app for Customer role to create appointment with an Assistant. This app consume backend from [Laravel Booking Services](https://github.com/madeabinawa/laravel_booking_services)
 
 ## Getting Started
 
@@ -19,3 +14,6 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+<img src="https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/login.png" width="30%" height="auto"> <img src="https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/home.png" width="30%" height="auto"> 
+<img src="https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/history.png" width="30%" height="auto"> <img src="https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/done.png" width="30%" height="auto">
