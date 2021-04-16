@@ -2,6 +2,11 @@
 
 An mobile app for Customer role to create appointment with an Assistant. This app consume backend from Laravel Booking Services
 
+![alt text](https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/login.png)
+![alt text](https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/home.png)
+![alt text](https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/history.png)
+![alt text](https://github.com/madeabinawa/flutter_booking_services/blob/main/assets/done.png)
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
